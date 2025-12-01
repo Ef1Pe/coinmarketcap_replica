@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoinMarketCap Replica · Exchanges</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              500: '#0052FF',
+              600: '#0042d9'
+            }
+          },
+          fontFamily: {
+            inter: ['Inter', 'Segoe UI', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-inter bg-[#f5f7fb] text-slate-900">
+  <div class="min-h-screen">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="h-20 flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <a href="index.html" class="flex items-center gap-3">
+              <img src="images/logo.svg" alt="CoinMarketCap" class="w-10 h-10">
+              <span class="text-xl font-semibold">CoinMarketCap</span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600">
+              <a href="index.html">Cryptocurrencies</a>
+              <a href="exchanges.html" class="text-primary-500">Exchanges</a>
+              <a href="derivatives.html">Derivatives</a>
+              <a href="news.html">News</a>
+              <a href="portfolio.html">Portfolio</a>
+              <a href="watchlist.html">Watchlist</a>
+            </nav>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="relative hidden md:block">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                </svg>
+              </span>
+              <input id="search-input" type="search" placeholder="Search exchanges"
+                class="pl-10 pr-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/30">
+            </div>
+            <button class="px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold">Log In</button>
+            <button class="px-4 py-2 rounded-full bg-primary-500 text-white text-sm font-semibold">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-10 space-y-8">
+      <section class="grid lg:grid-cols-[2fr,1fr] gap-6">
+        <div class="p-6 rounded-3xl bg-white border border-slate-200 flex flex-col gap-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-slate-500">Centralized Exchanges</p>
+              <h1 class="text-3xl font-semibold mt-2">Exchange Leaderboard</h1>
+              <p class="text-sm text-slate-500 mt-1">Ranked by adjusted 24h spot volume</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="badge-chip active">Spot</button>
+              <button class="badge-chip">Derivatives</button>
+              <button class="badge-chip">DEX</button>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-4 text-sm">
+            <div class="metric-card p-4">
+              <p class="text-slate-500 text-xs uppercase tracking-wide">Total Volume</p>
+              <p class="text-2xl font-semibold mt-2">$86.4B</p>
+              <p class="text-emerald-500 text-xs font-semibold mt-1">+12.1%</p>
+            </div>
+            <div class="metric-card p-4">
+              <p class="text-slate-500 text-xs uppercase tracking-wide">Average Liquidity</p>
+              <p class="text-2xl font-semibold mt-2">782</p>
+              <p class="text-slate-500 text-xs mt-1">Top 20 exchanges</p>
+            </div>
+            <div class="metric-card p-4">
+              <p class="text-slate-500 text-xs uppercase tracking-wide">Country Coverage</p>
+              <p class="text-2xl font-semibold mt-2">41 regions</p>
+              <p class="text-slate-500 text-xs mt-1">KYC ready</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 rounded-3xl border border-slate-200 bg-white flex flex-col gap-4">
+          <p class="text-sm font-semibold">Quick Filters</p>
+          <div class="flex flex-wrap gap-2">
+            <button class="badge-chip active">Top Tier</button>
+            <button class="badge-chip">USD</button>
+            <button class="badge-chip">Asia</button>
+            <button class="badge-chip">New</button>
+          </div>
+          <div class="text-xs text-slate-500">
+            Scores include compliance, liquidity, cyber-security and transparency indicators.
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-3xl border border-slate-200">
+        <div class="px-6 py-4 flex items-center justify-between border-b border-slate-200">
+          <p class="text-sm font-semibold">Top Centralized Exchanges</p>
+          <div class="flex items-center gap-2 text-xs text-slate-500">
+            <span class="flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              KYC
+            </span>
+            <span class="flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+              Restricted
+            </span>
+          </div>
+        </div>
+        <div class="table-scroll overflow-x-auto">
+          <table class="min-w-full">
+            <thead class="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+              <tr>
+                <th class="py-4 pl-4 pr-3">#</th>
+                <th class="py-4 pr-4">Exchange</th>
+                <th class="py-4 pr-4">Score</th>
+                <th class="py-4 pr-4">Volume (24h)</th>
+                <th class="py-4 pr-4">Visits</th>
+                <th class="py-4 pr-4">Markets</th>
+                <th class="py-4 pr-4">Coins</th>
+                <th class="py-4 pr-4">Fiat</th>
+                <th class="py-4 pr-4">Status</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white text-sm">
+              <tr class="data-row">
+                <td class="py-4 pl-4 pr-3 font-semibold text-slate-700">1</td>
+                <td class="py-4 pr-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full market-gradient flex items-center justify-center font-semibold">BN</div>
+                    <div>
+                      <p class="font-semibold">Binance</p>
+                      <p class="text-xs text-slate-500">Global</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 font-semibold">9.9</td>
+                <td class="py-4">$23.8B</td>
+                <td class="py-4">68.2M</td>
+                <td class="py-4">1701</td>
+                <td class="py-4">402</td>
+                <td class="py-4">USD, EUR, TRY</td>
+                <td class="py-4"><span class="status-pill positive">KYC</span></td>
+              </tr>
+              <tr class="data-row">
+                <td class="py-4 pl-4 pr-3 font-semibold text-slate-700">2</td>
+                <td class="py-4 pr-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-semibold">OK</div>
+                    <div>
+                      <p class="font-semibold">OKX</p>
+                      <p class="text-xs text-slate-500">Global</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 font-semibold">8.8</td>
+                <td class="py-4">$5.9B</td>
+                <td class="py-4">21.4M</td>
+                <td class="py-4">437</td>
+                <td class="py-4">330</td>
+                <td class="py-4">USD, EUR</td>
+                <td class="py-4"><span class="status-pill positive">KYC</span></td>
+              </tr>
+              <tr class="data-row">
+                <td class="py-4 pl-4 pr-3 font-semibold text-slate-700">3</td>
+                <td class="py-4 pr-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-semibold">CB</div>
+                    <div>
+                      <p class="font-semibold">Coinbase</p>
+                      <p class="text-xs text-slate-500">United States</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 font-semibold">8.5</td>
+                <td class="py-4">$3.4B</td>
+                <td class="py-4">32.1M</td>
+                <td class="py-4">564</td>
+                <td class="py-4">251</td>
+                <td class="py-4">USD, GBP, EUR</td>
+                <td class="py-4"><span class="status-pill positive">KYC</span></td>
+              </tr>
+              <tr class="data-row">
+                <td class="py-4 pl-4 pr-3 font-semibold text-slate-700">4</td>
+                <td class="py-4 pr-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-semibold">BY</div>
+                    <div>
+                      <p class="font-semibold">Bybit</p>
+                      <p class="text-xs text-slate-500">UAE</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 font-semibold">8.2</td>
+                <td class="py-4">$2.1B</td>
+                <td class="py-4">7.2M</td>
+                <td class="py-4">316</td>
+                <td class="py-4">289</td>
+                <td class="py-4">USD, AED</td>
+                <td class="py-4"><span class="status-pill positive">KYC</span></td>
+              </tr>
+              <tr class="data-row">
+                <td class="py-4 pl-4 pr-3 font-semibold text-slate-700">5</td>
+                <td class="py-4 pr-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-semibold">KR</div>
+                    <div>
+                      <p class="font-semibold">Kraken</p>
+                      <p class="text-xs text-slate-500">United States</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 font-semibold">8.1</td>
+                <td class="py-4">$1.3B</td>
+                <td class="py-4">8.7M</td>
+                <td class="py-4">220</td>
+                <td class="py-4">226</td>
+                <td class="py-4">USD, EUR, GBP</td>
+                <td class="py-4"><span class="status-pill positive">KYC</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-10">
+      <div class="max-w-6xl mx-auto px-6 py-10 text-sm text-slate-500 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <p>© 2025 CoinMarketCap Replica. Built for demonstration.</p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-slate-700">Privacy</a>
+          <a href="#" class="hover:text-slate-700">Terms</a>
+          <a href="#" class="hover:text-slate-700">Support</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+site_analysis:
+  name: "CoinMarketCap"
+  url: "https://coinmarketcap.com"
+  type: "data-tracking"
+
+  color_palette:
+    primary: "#0052FF"
+    secondary: "#0A1128"
+    accent: "#12B886"
+    text_primary: "#11142D"
+    text_secondary: "#566074"
+    background: "#F5F7FB"
+    surface: "#FFFFFF"
+    warning: "#FFB020"
+    danger: "#E03131"
+
+  typography:
+    heading_font: "Inter, 'Segoe UI', sans-serif"
+    heading_sizes:
+      h1: "28px"
+      h2: "22px"
+      h3: "18px"
+    body_font: "Inter, 'Segoe UI', sans-serif"
+    body_size: "14px"
+    ui_font: "Inter, 'Segoe UI', sans-serif"
+
+  layout:
+    max_width: "1400px"
+    header_height: "72px"
+    toolbar_height: "64px"
+    grid_columns: 12
+    grid_gap: "16px"
+
+  key_components:
+    - "Sticky top navigation with logo, search, and auth buttons"
+    - "Secondary filter toolbar with chips and KPI widgets"
+    - "Data table listing cryptocurrencies with badges and sparklines"
+    - "Pagination footer"
+    - "Right-aligned mini charts column"
+
+  injection_targets:
+    - name: "market_table"
+      selector: "#market-table-body"
+      description: "Primary tbody where asset rows render"
+    - name: "news_feed"
+      selector: "#news-feed"
+      description: "Optional slot on news.html for dynamic stories"

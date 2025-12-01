@@ -1,0 +1,126 @@
+:root {
+  --c-primary: #0052ff;
+  --c-secondary: #0a1733;
+  --c-accent: #12b886;
+  --c-background: #f5f7fb;
+  --c-surface: #ffffff;
+  --c-muted: #94a3b8;
+  --c-border: #e2e8f0;
+  --c-danger: #e03131;
+  --c-warning: #ffb020;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--c-background);
+  color: #11142d;
+}
+
+.market-gradient {
+  background: linear-gradient(125deg, rgba(0, 82, 255, 0.1), rgba(18, 184, 134, 0.08));
+}
+
+.metric-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.badge-chip {
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.badge-chip.active {
+  background: rgba(0, 82, 255, 0.12);
+  color: var(--c-primary);
+  border-color: rgba(0, 82, 255, 0.2);
+}
+
+.data-table th {
+  font-size: 0.72rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: #6c778f;
+}
+
+.data-row {
+  border-bottom: 1px solid var(--c-border);
+  transition: background 0.2s ease;
+}
+
+.data-row:hover {
+  background: rgba(15, 23, 42, 0.02);
+}
+
+.sparkline-positive {
+  background: linear-gradient(135deg, rgba(18, 184, 134, 0.12), rgba(18, 184, 134, 0));
+}
+
+.sparkline-negative {
+  background: linear-gradient(135deg, rgba(224, 49, 49, 0.15), rgba(224, 49, 49, 0));
+}
+
+.status-pill {
+  border-radius: 999px;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-pill.positive {
+  background: rgba(18, 184, 134, 0.16);
+  color: #0f8a62;
+}
+
+.status-pill.negative {
+  background: rgba(224, 49, 49, 0.12);
+  color: #b02020;
+}
+
+.pagination button.active {
+  background: var(--c-primary);
+  color: white;
+  border-color: transparent;
+}
+
+.table-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.6) transparent;
+}
+
+.table-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.7);
+  border-radius: 999px;
+}
+
+.injected-highlight {
+  outline: 2px dashed #ffd24c;
+  outline-offset: -4px;
+}
+
+@keyframes pulseRow {
+  0% {
+    background-color: rgba(255, 210, 76, 0.15);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.data-row.injected {
+  animation: pulseRow 2s ease forwards;
+}
